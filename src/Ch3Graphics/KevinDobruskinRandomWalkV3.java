@@ -1,0 +1,126 @@
+package Ch3Graphics;
+
+import java.awt.*;
+import java.io.IOException;
+import java.util.Random;
+import java.util.Scanner;
+
+import static MyUtilMethod.MyUtilMethod.getGoodInt;
+import static MyUtilMethod.MyUtilMethod.playAgain;
+
+/**
+ * this program plays the random walk game
+ * 5/21/2023
+ * Kevin Dobruskin
+ * version 3
+ */
+public class KevinDobruskinRandomWalkV3 {
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final int sizeOfPanel = 500;
+
+
+    public static void main(String[] args) throws IOException {
+        DrawingPanel drawingPanel = new DrawingPanel(sizeOfPanel, sizeOfPanel);
+        Graphics pen = drawingPanel.getGraphics();
+        var numberOfGames = 1;
+        var leastSteps = randomWalk(drawingPanel, pen);
+        var totalNumberOfSteps = leastSteps;
+        while (playAgain("do you want to play again? (y/n) ")) {
+            drawingPanel = new DrawingPanel(sizeOfPanel, sizeOfPanel);
+            pen = drawingPanel.getGraphics();
+            var numberOfSteps = randomWalk(drawingPanel, pen);
+            totalNumberOfSteps += numberOfSteps;
+            if (numberOfSteps < leastSteps) {
+                leastSteps = numberOfSteps;
+            }
+            numberOfGames++;
+        }
+        Stats(numberOfGames, totalNumberOfSteps, leastSteps);
+        scanner.close();
+    }
+
+    /**
+     * this sets the game up to be played and then plays it
+     *
+     * @return number of steps taken that game
+     */
+    public static int randomWalk(DrawingPanel drawingPanel, Graphics pen) {
+        var numberOfSteps = 0;
+        int[] playerPosition = {0, 0};
+        System.out.print("radius ");
+        int radius = getGoodInt(scanner.next());
+        pen.drawOval(((sizeOfPanel / 2) - radius), ((sizeOfPanel / 2) - radius), radius * 2, radius * 2);
+        numberOfSteps = playerEscape(playerPosition, radius, drawingPanel, pen);
+        System.out.println("you escaped in " + numberOfSteps + " steps");
+        return numberOfSteps;
+    }
+
+    /**
+     * this runs the game
+     *
+     * @param playerPosition the position of the player
+     * @param radius         the radius of the circle
+     * @return the number of steps the player has taken
+     */
+    public static int playerEscape(int[] playerPosition, int radius, DrawingPanel drawingPanel, Graphics pen) {
+        int numberOfSteps = 0;
+        do {
+            playerMove(playerPosition, pen);
+            drawingPanel.sleep(1);
+            numberOfSteps++;
+        } while (Math.sqrt(Math.pow(playerPosition[0], 2) + Math.pow(playerPosition[1], 2)) < radius);
+        return numberOfSteps;
+    }
+
+    /**
+     * this moves the player in a random direction
+     *
+     * @param playerPosition the position of the player
+     */
+    private static void playerMove(int[] playerPosition, Graphics pen) {
+        pen.fillRect((sizeOfPanel / 2) + playerPosition[0], (sizeOfPanel / 2) + playerPosition[1], 1, 1);
+        Direction direction = Direction.randomDirection();
+        switch (direction) {
+            case UP:
+                playerPosition[0] += 1;
+                break;
+            case DOWN:
+                playerPosition[0] -= 1;
+                break;
+            case RIGHT:
+                playerPosition[1] += 1;
+                break;
+            case LEFT:
+                playerPosition[1] -= 1;
+                break;
+        }
+    }
+
+    /**
+     * this prints the stats of the game
+     *
+     * @param numberOfGames      the number of games played
+     * @param totalNumberOfSteps the total number of steps taken
+     * @param leastSteps         the lest steps taken in a game
+     */
+    public static void Stats(int numberOfGames, int totalNumberOfSteps, int leastSteps) {
+        System.out.println("Stats:");
+        System.out.println("Total walks: " + numberOfGames);
+        System.out.println("Total steps: " + totalNumberOfSteps);
+        System.out.println("Best walk: " + leastSteps);
+    }
+
+    /**
+     * this is the enum that is used to randomly pick a direction
+     */
+    private enum Direction {
+        UP, DOWN, RIGHT, LEFT;
+
+        private static final Random rand = new Random();
+
+        public static Direction randomDirection() {
+            Direction[] directions = values();
+            return directions[rand.nextInt(4)];
+        }
+    }
+}

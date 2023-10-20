@@ -139,7 +139,7 @@ public class HangmanV2 {
      */
     public static String getRandomWord() throws IOException {
         String line;
-        try (Stream<String> lines = Files.lines(Paths.get("G:\\My Drive\\ijp\\workspace\\src\\Games\\1000RandomWords"))) {
+        try (Stream<String> lines = Files.lines(Paths.get("C:\\Users\\baily\\Desktop\\personal java work\\workspace\\src\\Games\\1000RandomWords.txt"))) {
             line = lines.skip(random.nextInt(1000)).findFirst().get();
         }
         return line;

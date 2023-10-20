@@ -60,9 +60,9 @@ public class TicTacToePlayerV3 {
      * @return the players move
      */
     public static PlayerMove playerPlay(char[][] board) {
-        System.out.print("enter column 1-3: ");
+        System.out.print("enter column 1-"+BOARD_SIZE+": ");
         final var column = getGoodInt(scanner.next()) - 1;
-        System.out.print("enter row 1-3: ");
+        System.out.print("enter row 1-"+ BOARD_SIZE +": ");
         final var row = getGoodInt(scanner.next()) - 1;
         if (board[row][column] != '-') {
             System.out.println("location already used redo turn");
@@ -162,7 +162,7 @@ public class TicTacToePlayerV3 {
             return getGoodInt(scanner.next());
         }
         if (aInt > BOARD_SIZE || aInt < 1) {
-            System.out.print("the int can only be 1-3 try again: ");
+            System.out.print("the int can only be 1-" + BOARD_SIZE +" try again: ");
             return getGoodInt(scanner.next());
         }
         return aInt;

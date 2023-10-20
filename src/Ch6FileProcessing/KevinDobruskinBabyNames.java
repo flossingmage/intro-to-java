@@ -1,5 +1,5 @@
 package Ch6FileProcessing;
-
+/*
 import Ch3Graphics.DrawingPanel;
 
 import java.awt.*;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  * 6/4/2023
  * Kevin Dobruskin
  */
-
+/*
 public class KevinDobruskinBabyNames {
     public static final Scanner scanner = new Scanner(System.in);
 
@@ -57,6 +57,6 @@ public class KevinDobruskinBabyNames {
             System.out.println("Name \"" + name + "\" not found.");
         }
         scanner.close();
-        scan.close();
     }
 }
+*/

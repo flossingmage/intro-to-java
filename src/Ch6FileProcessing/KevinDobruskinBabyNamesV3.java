@@ -1,5 +1,5 @@
 package Ch6FileProcessing;
-
+/*
 import Ch3Graphics.DrawingPanel;
 
 import java.awt.*;
@@ -16,7 +16,7 @@ import static MyUtilMethod.MyUtilMethod.playAgain;
  * 6/4/2023
  * Kevin Dobruskin
  */
-
+/*
 public class KevinDobruskinBabyNamesV3 {
     private static final int years = 1900;
     private static final int numOfDecades = (2010 - years) / 10;
@@ -39,6 +39,7 @@ public class KevinDobruskinBabyNamesV3 {
      *
      * @return the name
      */
+    /*
     private static String intro() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("This program graphs the popularity of a name\nin Social Security baby name statistics\nrecorded since the year " + years + ".");
@@ -55,6 +56,7 @@ public class KevinDobruskinBabyNamesV3 {
      * @param fileScanner the file scanner
      * @param pen  the pen that is used to draw the panel.
      */
+    /*
     private static void printNameInfo(String name, Scanner fileScanner, Graphics pen, PrintStream out2) {
         out2.println("Popularity ranking of name \"" + name + "\"");
         int offset = 0;
@@ -84,20 +86,22 @@ public class KevinDobruskinBabyNamesV3 {
      *
      * @param name the name that is being graphed
      */
+    /*
     private static Graphics drawGraph(String name) {
-        DrawingPanel panel = new DrawingPanel(widthOfPanels * numOfDecades, 560);
-        Graphics pen = panel.getGraphics();
+     DrawingPanel panel = new DrawingPanel(widthOfPanels * numOfDecades, 560);
+    Graphics pen = panel.getGraphics();
         drawYellowBars(pen, name);
         drawGrayLines(pen);
         return pen;
     }
-
+*/
     /**
      * this method returns the y value of the point on the graph
      *
      * @param y the y value of the point
      * @return the y value of the point on the graph
      */
+    /*
     private static int valueOfY(int y) {
         if (y == 0) {
             return 530;
@@ -111,6 +115,7 @@ public class KevinDobruskinBabyNamesV3 {
      * @param pen  the pen that draws the lines
      * @param name the name that is being graphed
      */
+    /*
     private static void drawYellowBars(Graphics pen, String name) {
         // this draws the yellow bars at the top and bottom
         pen.setColor(Color.YELLOW);
@@ -134,6 +139,7 @@ public class KevinDobruskinBabyNamesV3 {
      * @param XAxis   the x value of the point
      * @return the current value
      */
+    /*
     private static int drawLineGraph(Graphics pen, int prev, int current, int XAxis) {
         pen.setColor(Color.black);
         pen.drawString(current + "", XAxis, valueOfY(current));
@@ -147,6 +153,7 @@ public class KevinDobruskinBabyNamesV3 {
      *
      * @param pen the pen that draws the lines
      */
+    /*
     private static void drawGrayLines(Graphics pen) {
         // this draws the gray lines
         pen.setColor(Color.LIGHT_GRAY);
@@ -163,6 +170,7 @@ public class KevinDobruskinBabyNamesV3 {
      * @param fileScanner the file scanner
      * @return true if the name exists
      */
+    /*
     private static boolean CheckForName(String name, Scanner fileScanner, PrintStream out2) {
         boolean doesExist = false;
         do {
@@ -180,3 +188,4 @@ public class KevinDobruskinBabyNamesV3 {
         return doesExist;
     }
 }
+*/

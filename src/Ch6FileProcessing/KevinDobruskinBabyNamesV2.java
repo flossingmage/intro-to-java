@@ -1,5 +1,5 @@
 package Ch6FileProcessing;
-
+/* 
 import Ch3Graphics.DrawingPanel;
 
 import java.awt.*;
@@ -14,7 +14,7 @@ import static MyUtilMethod.MyUtilMethod.playAgain;
  * 6/4/2023
  * Kevin Dobruskin
  */
-
+/*
 public class KevinDobruskinBabyNamesV2 {
     private static final int years = 1900;
     private static final int numOfDecades = (2010 - years) / 10;
@@ -30,12 +30,14 @@ public class KevinDobruskinBabyNamesV2 {
         } while (playAgain("Do you want to play again? "));
         
     }
+    */
 
     /**
      * this method prints the intro and gets the name
      *
      * @return the name
      */
+    /* 
     private static String intro() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("This program graphs the popularity of a name\nin Social Security baby name statistics\nrecorded since the year " + years + ".");
@@ -44,12 +46,14 @@ public class KevinDobruskinBabyNamesV2 {
         scanner.close();
         return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
     }
+    */
 
     /**
      * this method prints the popularity of the name in the terminal
      *
      * @param name the name that is being graphed
      */
+    /*
     private static int[] printNameInfo(String name, Scanner scan) {
         System.out.println("Popularity ranking of name \"" + name + "\"");
         int offset = 0;
@@ -68,13 +72,14 @@ public class KevinDobruskinBabyNamesV2 {
         }
         return decades;
     }
-
+*/
     /**
      * this method creates the graph
      *
      * @param name    the name that is being graphed
      * @param decades the popularity of the name in each decade
      */
+/*
     private static void drawGraph(String name, int[] decades) {
         DrawingPanel panel = new DrawingPanel(widthOfPanels * numOfDecades, 560);
         Graphics pen = panel.getGraphics();
@@ -82,6 +87,7 @@ public class KevinDobruskinBabyNamesV2 {
         drawGrayLines(pen);
         drawLineGraph(pen, decades);
     }
+*/
 
     /**
      * this method returns the y value of the point on the graph
@@ -89,12 +95,14 @@ public class KevinDobruskinBabyNamesV2 {
      * @param y the y value of the point
      * @return the y value of the point on the graph
      */
+    /*
     private static int valueOfY(int y) {
         if (y == 0) {
             return 530;
         }
         return Math.abs(y / 2) + 30;
     }
+    */
 
     /**
      * this method draws the yellow bars at the top and bottom of the panel
@@ -102,6 +110,7 @@ public class KevinDobruskinBabyNamesV2 {
      * @param pen  the pen that draws the lines
      * @param name the name that is being graphed
      */
+    /*
     private static void drawYellowBars(Graphics pen, String name) {
         // this draws the yellow bars at the top and bottom
         pen.setColor(Color.YELLOW);
@@ -115,13 +124,14 @@ public class KevinDobruskinBabyNamesV2 {
             pen.drawString(i + "", widthOfPanels * ((i / 10) - (years / 10)), 550);
         }
     }
-
+*/
     /**
      * this method draws the line graph
      *
      * @param pen     the pen that draws the lines
      * @param decades the popularity of the name in each decade
      */
+    /*
     private static void drawLineGraph(Graphics pen, int[] decades) {
         for (int i = 0; i < numOfDecades; i++) {
             int x = widthOfPanels * i;
@@ -133,12 +143,13 @@ public class KevinDobruskinBabyNamesV2 {
             }
         }
     }
-
+*/
     /**
      * this method draws the gray lines
      *
      * @param pen the pen that draws the lines
      */
+    /*
     private static void drawGrayLines(Graphics pen) {
         // this draws the gray lines
         pen.setColor(Color.LIGHT_GRAY);
@@ -147,13 +158,14 @@ public class KevinDobruskinBabyNamesV2 {
             pen.drawLine(widthOfPanels * i, 30, widthOfPanels * i, 530);
         }
     }
-
+*/
     /**
      * this method checks if the name exists. If the name exists it calls the methods to print the info and draw the graph
      *
      * @param name the name that is being graphed
      * @return true if the name exists
      */
+    /*
     private static boolean CheckForName(String name, Scanner scan) {
         boolean doesExist = false;
         do {
@@ -170,3 +182,4 @@ public class KevinDobruskinBabyNamesV2 {
         return doesExist;
     }
 }
+*/

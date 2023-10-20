@@ -28,6 +28,7 @@ public class KevinDobruskinBabyNamesV2 {
                 System.out.println("Name \"" + name + "\" not found.");
             }
         } while (playAgain("Do you want to play again? "));
+        
     }
 
     /**
@@ -40,6 +41,7 @@ public class KevinDobruskinBabyNamesV2 {
         System.out.println("This program graphs the popularity of a name\nin Social Security baby name statistics\nrecorded since the year " + years + ".");
         System.out.print("\nType a name ");
         String name = scanner.next();
+        scanner.close();
         return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
     }
 

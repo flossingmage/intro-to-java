@@ -11,6 +11,6 @@ public class PasswordCherker {
             temp = scanner.nextLine();
         } while (!temp.equals("hi"));
         System.out.println("you got it right");
-
+        scanner.close();
     }
 }

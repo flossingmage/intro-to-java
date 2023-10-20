@@ -8,6 +8,7 @@ public class CookiesV2 {
         System.out.println("How many cookies do you want to bake");
         int numberOfCookies = cookies.nextInt();
         cookies20(numberOfCookies);
+        cookies.close();
 
     }
     public static void cookies20(int cookies) {

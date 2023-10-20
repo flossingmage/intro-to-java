@@ -1,7 +1,5 @@
 package Ch1intro;
 
-import java.util.stream.Stream;
-
 /*
 this code will be used for me to be dumb.
 Kevin Dobruskin

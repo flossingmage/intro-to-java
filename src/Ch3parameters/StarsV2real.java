@@ -6,7 +6,7 @@ public class StarsV2real {
         Scanner numOfStar = new Scanner(System.in);
         System.out.print("# of stars: ");
         int num = numOfStar.nextInt();
-        String s;
         System.out.println("*".repeat(num));
+        numOfStar.close();
     }
 }

@@ -56,5 +56,7 @@ public class KevinDobruskinBabyNames {
         if (!doesExist) {
             System.out.println("Name \"" + name + "\" not found.");
         }
+        scanner.close();
+        scan.close();
     }
 }

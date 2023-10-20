@@ -9,5 +9,6 @@ public class StarsV2 {
         for (int Star=1; Star<=num; Star++) {
             System.out.println();
         }
+        numOfStar.close();
     }
 }

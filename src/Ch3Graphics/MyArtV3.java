@@ -17,7 +17,7 @@ public class MyArtV3 {
     public static ArrayList<double[]> plants = new ArrayList<>();
 
     public static void main(String[] args) {
-        Graphics2D gloukStuff = (Graphics2D) pen;
+        //Graphics2D gloukStuff = (Graphics2D) pen;
         pen.drawImage(new ImageIcon("src/Ch3Graphics/FilesPNG/Stars.png").getImage(), 0, 0, 650, 650, null);
         cratePlants();
         drawingPanel.setBackground(Color.black);
